@@ -1,0 +1,10 @@
+# Rust build output
+/target/
+
+# Hantek's own installers, drivers and firmware (proprietary, ~200 MB) - never commit
+DSO2D15/
+
+# captures made while using the app
+*.csv
+*.png
+!docs/*.png

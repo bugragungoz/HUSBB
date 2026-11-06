@@ -1,0 +1,16 @@
+{
+ "*IDN?": "undefined, DSO2D15, CN5524029091177, 3.0.1(250418.00)",
+ ":CHANnel1:DISPlay?": "1",
+ ":CHANnel2:DISPlay?": "1",
+ ":CHANnel1:SCALe?": "5.000e-01",
+ ":CHANnel2:SCALe?": "5.000e+00",
+ ":CHANnel1:PROBe?": "1.000e+01",
+ ":CHANnel2:PROBe?": "1.000e+01",
+ ":CHANnel1:OFFSet?": "0",
+ ":CHANnel2:OFFSet?": "0",
+ ":TIMebase:SCALe?": "2.000000e-04",
+ ":WAVeform:XINCrement?": "8e-07",
+ ":WAVeform:XORigin?": "0.00154",
+ ":TRIGger:EDGe:SOURce?": "CHANnel2",
+ ":TRIGger:EDGe:LEVel?": "2.400000e+00"
+}
