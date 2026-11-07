@@ -5,9 +5,19 @@
 <h1 align="center">HUSBB</h1>
 <p align="center"><b>Hantek DSO2D15 USB Bridge</b> - the DSO2D15's screen on your PC, both channels, live.</p>
 
-![HUSBB showing CH1 and CH2 of a Hantek DSO2D15](docs/screenshot-scope.png)
+<p align="center">
+  <b>English</b> |
+  <a href="README.tr.md">Türkçe</a> |
+  <a href="README.zh-CN.md">简体中文</a> |
+  <a href="README.ja.md">日本語</a> |
+  <a href="README.de.md">Deutsch</a> |
+  <a href="README.es.md">Español</a> |
+  <a href="README.ru.md">Русский</a>
+</p>
 
-> Türkçe özet aşağıda.
+<p align="center"><a href="https://github.com/bugragungoz/HUSBB/releases/latest"><b>Download HUSBB.exe</b></a></p>
+
+![HUSBB showing CH1 and CH2 of a Hantek DSO2D15](docs/screenshot-scope.png)
 
 HUSBB is a native Windows app (Rust, egui on wgpu) for the **Hantek DSO2D15** oscilloscope. It
 reads both channels from the same acquisition over USB and draws them like the scope does, with
@@ -47,6 +57,12 @@ while a PC is connected, and how to give it back. Details: [docs/PROTOCOL.md](do
 
 ![Measure tab: measurement table and track cursors on real samples](docs/screenshot-measure.png)
 
+## Download
+
+[**HUSBB.exe**](https://github.com/bugragungoz/HUSBB/releases/latest) from Releases: one file, no
+installer. Besides it you only need a VISA (see below). The exe is not code-signed, so Windows
+SmartScreen may ask once: *More info* -> *Run anyway*.
+
 ## Requirements
 
 - Windows 10 or 11, 64-bit, and a Hantek DSO2D15 (tested on firmware 3.0.1(250418.00)).
@@ -63,6 +79,8 @@ to 5 min - with no traffic at all, and on battery power too (Windows logs Kernel
 laptop and scope fixed it.** `tools/idle_watch.ps1` reproduces the test.
 
 ## Build and run
+
+With [Rust](https://rustup.rs) (stable, MSVC toolchain):
 
 ```bash
 cargo build --release
@@ -115,22 +133,6 @@ HUSBB was built with **Claude Opus 5.5**. The DSO2D15's protocol was recovered b
 engineering the scope's original firmware update and Hantek's PC software - static analysis of the
 files only; nothing was written to or flashed onto the scope.
 
-## Türkçe özet
-
-HUSBB (Hantek DSO2D15 USB Bridge), Hantek DSO2D15 osiloskobunun ekranını USB üzerinden
-bilgisayarda canlı gösteren yerel bir Windows uygulamasıdır (Rust + egui/wgpu). Firmware 3.0.1'de
-Hantek'in kendi programı hiçbir şey göstermiyor, belgelenmiş `:WAVeform:DATA:ALL?` komutu da iki
-kanal açıkken tek kanalı iki kez gönderiyor. **Claude Opus 5.5 ile osiloskobun orijinal firmware'i
-ve Hantek'in PC yazılımı tersine mühendislikle analiz edilerek** (yalnızca dosyalar üzerinde
-statik analiz; osiloskoba hiçbir şey yazılmadı) bulunan `:WAVeform:DATA:DISP?` komutu iki kanalı
-aynı edinimden, kayıpsız ve kanal açıp kapatmadan veriyor; HUSBB bunu kullanıyor.
-
-Özellikler: iki kanal birlikte (osiloskobun kendi renkleriyle), Live link anahtarı (kapatınca
-osiloskobun tuş kilidi ~5 saniyede açılır), kanal başına göster/gizle, V/div, zaman tabanı ve tetik
-ayarları, ölçümler, gerçek örneklere oturan imleçler, işaretçiler, ekranı dondurma (Hold), ayarlarda
-seçilen klasöre tek tıkla dışa aktarma (PNG/CSV). Laptopta bütün portlar USB 3.x ise osiloskop
-USB'den düşebiliyor; araya basit bir USB 2.0 hub koymak sorunu çözdü.
-
 ## Credits
 
 Earlier protocol work: [phmarek/hantek-dso2000](https://github.com/phmarek/hantek-dso2000) and the
@@ -142,4 +144,4 @@ included in this repository.
 
 ## License
 
-MIT
+[MIT](LICENSE)

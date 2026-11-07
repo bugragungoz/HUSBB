@@ -1,11 +1,12 @@
 # Passive test: never opens the scope. Reports arrival, then how long it stays on the bus untouched.
-$id = 'USB\VID_049F&PID_505E\CN5524029091177'
+# Watches the first Hantek DSO2D15 (USB VID 049F, PID 505E) Windows knows about.
+param([string]$InstanceId = 'USB\VID_049F&PID_505E\*')
 $prev = $null
 $since = $null
 $lastReport = $null
 while ($true) {
-    $d = Get-PnpDevice -InstanceId $id -ErrorAction SilentlyContinue
-    $present = [bool]($d -and $d.Present)
+    $d = Get-PnpDevice -InstanceId $InstanceId -ErrorAction SilentlyContinue | Where-Object Present | Select-Object -First 1
+    $present = [bool]$d
     $now = Get-Date
     if ($present -ne $prev) {
         if ($present) {
